@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function set(person) {
+            return person + " cup of water<br> " +
+                person + " cup of milk<br> " +
+                (person / 3).toFixed(2) + " table spoon coffee<br> " +
+                person + " table spoon sugar";
+        }
+
+        function set1(person) {
+            return person + " cup of water<br> " +
+                person + " cup of milk<br> " +
+                (person / 3).toFixed(2) + " table spoon coffee";
+        }
+
+        function set2(person) {
+            return person + " cup of water<br> " +
+                person + " cup of milk<br> " +
+                (person / 4).toFixed(2) + " table spoon coffee<br> " +
+                (person / 2).toFixed(2) + " table spoon sugar";
+        }
+
+        function set3(person) {
+            return person + " cup of water<br> " +
+                person + " cup of milk<br> " +
+                (person / 4).toFixed(2) + " table spoon coffee";
+        }
+        function set4(person) {
+            return withoutSugar + " cup of water<br> " +
+                withoutSugar + " cup of milk<br> " +
+                (withoutSugar / 4).toFixed(2) + " table spoon coffee";
+
+        }
+
+        let person = parseInt(prompt("Enter number of persons for coffee"), 10);
+        let choice = parseInt(prompt("1) hard \n 2) light"), 10);
+
+        if (choice === 1) {
+            let sugar = parseInt(prompt("1) with sugar \n 2) without sugar"), 10);
+            if (sugar === 1) {
+                document.write(set(person));
+            } else if (sugar === 2) {
+                document.write(set1(person));
+            }
+        } else if (choice === 2) {
+            let sugar = parseInt(prompt("1) with sugar \n 2) without sugar"), 10);
+            if (sugar === 1) {
+                document.write(set2(person));
+            } else if (sugar === 2) {
+                document.write(set3(person));
+            }
+        }
+
+        let withoutSugar = parseInt(prompt("How many persons want without sugar:"), 10);
+        if (withoutSugar >= person) {
+            document.write("Enter valid number of persons");
+        } else if (withoutSugar >= 0) {
+            let totalWithSugar = person - withoutSugar;
+
+            document.write("<br>Total persons:<br>");
+            if (totalWithSugar > 0) {
+                document.write(totalWithSugar + " persons with sugar.<br>");
+            }
+            if (withoutSugar > 0) {
+                document.write(withoutSugar + " persons without sugar.<br>");
+            }
+        } else {
+            document.write("Please enter a valid number for persons without sugar.");
+        }
+
+    </script>
+</body>
+
+</html>

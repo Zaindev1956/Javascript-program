@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sallry= prompt("enter your sallry")
+        let day=prompt("enter number of days you work in this month")
+        let overtime=prompt("enter overtime you have work")
+        let sallday=sallry/30;
+        document.write("per day sallry is ",sallday+ "<br>")
+       let monthsal=day*sallday;
+        document.write("sallry of this month",monthsal+ "<br>")
+        let hour = sallday/12;
+        let m_overtime=hour*overtime;
+        document.write("over time of this month is",m_overtime+ "<br>")
+        let t_sallry=m_overtime+monthsal;
+        document.write("total sallry of this month is",t_sallry+ "<br>")
+        
+
+
+    </script>
+    
+</body>
+</html>

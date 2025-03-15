@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+</head>
+<body>
+    <script>
+        let username = 'Zain';
+        let password = '1111';  
+        let balance = 20000;
+
+        let a = prompt("Enter username:");
+        let b = prompt("Enter your password:");
+
+        if (a === username) {
+            if (b === password) { 
+                let c = prompt("Select an option:\n1) Current\n2) Bill Payment\n3) Savings");
+
+                if (c === '1') {
+                    let d = prompt("1) Withdraw amount\n2) Balance inquiry");
+                    if (d === '1') {
+                        let withdraw = prompt("Enter amount to withdraw:");
+                       
+                        if (withdraw <= balance) {
+                            balance= balance-withdraw;
+                            document.write("You withdrew",withdraw," successfully. Your remaining balance is",balance);
+                        } else {
+                            document.write("Insufficient balance for withdrawal.");
+                        }
+                    } else if (d === '2') {
+                        document.write("Your current balance is", balance);
+                    }
+                } else if (c === '2') {
+                    let bill = prompt("1) Electricity bill\n2) Gas bill");
+                    if (bill === '1') {
+                        let ebill = prompt("Enter amount of electricity bill:");
+                        
+                        if (ebill <= balance) {
+                            balance = balance-ebill;
+                            document.write("You have paid your electricity bill of ",ebill,"successfully. Your remaining balance is", balance);
+                        } else {
+                            document.write("Insufficient balance to pay the electricity bill.");
+                        }
+                    } else if (bill === '2') {
+                        let gbill = prompt("Enter amount of gas bill:");
+                       
+                        if (gbill <= balance) {
+                            balance= balance-gbill;
+                            document.write("You have paid your gas bill of ",gbill," successfully. Your remaining balance is",balance);
+                        } else {
+                            document.write("Insufficient    balance   to pay the gas bill.");
+                        }
+                    }
+                } else if (c === '3') {
+                    document.write("Your current balance is ",balance);
+                } else {
+                    document.write("Invalid option selected.");
+                }
+            } else {
+                document.write("Incorrect password.");
+            }
+        } else {
+            document.write("Incorrect username.");
+            
+        }
+    </script>
+</body>
+</html>
